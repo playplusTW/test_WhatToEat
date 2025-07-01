@@ -22,6 +22,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Generate README
+        run: npm run generate-readme
+
+      - name: Commit README
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: README.md
+          message: 'chore: update README [skip ci]'
+          default_author: github_actions
+
       - name: Build
         run: npm run build
 
