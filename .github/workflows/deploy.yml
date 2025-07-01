@@ -1,9 +1,7 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main  # 每次 push 到 main 就部署
+  push:  # 每次 push 自動部署
 
 jobs:
   deploy:
