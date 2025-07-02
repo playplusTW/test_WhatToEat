@@ -16,11 +16,11 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({
   historyCount
 }) => {
   const navItems = [
-    { id: 'home' as ViewMode, icon: Home, label: 'Home' },
-    { id: 'filters' as ViewMode, icon: Filter, label: 'Filters' },
-    { id: 'map' as ViewMode, icon: Map, label: 'Map' },
-    { id: 'bookmarks' as ViewMode, icon: Bookmark, label: 'Saved', badge: bookmarkCount },
-    { id: 'history' as ViewMode, icon: History, label: 'History', badge: historyCount }
+    { id: 'home' as ViewMode, icon: Home, label: '首頁' },
+    { id: 'filters' as ViewMode, icon: Filter, label: '篩選' },
+    { id: 'map' as ViewMode, icon: Map, label: '地圖' },
+    { id: 'bookmarks' as ViewMode, icon: Bookmark, label: '收藏', badge: bookmarkCount },
+    { id: 'history' as ViewMode, icon: History, label: '歷史', badge: historyCount }
   ];
 
   return (

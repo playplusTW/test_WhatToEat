@@ -32,14 +32,14 @@ export const HistoryList: React.FC<HistoryListProps> = ({
           <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-12">
             <Clock size={64} className="mx-auto text-blue-300 dark:text-blue-600 mb-6" />
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              No History Yet
+              尚無歷史記錄
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Start discovering restaurants and they'll appear here for future reference.
+              開始探索餐廳，這裡會保留你查詢過的紀錄。
             </p>
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg">
               <History size={16} />
-              <span className="text-sm">Use "Surprise Me!" to start building your history</span>
+              <span className="text-sm">點擊「給我驚喜」即可建立歷史紀錄</span>
             </div>
           </div>
         </div>
@@ -59,22 +59,22 @@ export const HistoryList: React.FC<HistoryListProps> = ({
           <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
             <History size={16} className="text-blue-500" />
             <span className="text-sm text-gray-600 dark:text-gray-300">
-              {uniqueHistory.length} Recent Suggestion{uniqueHistory.length !== 1 ? 's' : ''}
+              最近紀錄 {uniqueHistory.length} 筆
             </span>
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            Your History
+            歷史紀錄
           </h1>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Recently suggested restaurants
+            近期推薦的餐廳
           </p>
 
           <button
             onClick={onClearHistory}
             className="px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
           >
-            Clear History
+            清除歷史
           </button>
         </div>
 

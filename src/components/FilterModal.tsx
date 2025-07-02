@@ -36,19 +36,19 @@ export const FilterModal: React.FC<FilterModalProps> = ({
   };
 
   const toggleCuisine = (cuisine: string) => {
-    if (cuisine === 'All') {
+    if (cuisine === '全部') {
       setLocalPreferences(prev => ({
         ...prev,
-        cuisineTypes: prev.cuisineTypes.includes('All') ? [] : ['All']
+        cuisineTypes: prev.cuisineTypes.includes('全部') ? [] : ['全部']
       }));
     } else {
       setLocalPreferences(prev => ({
         ...prev,
-        cuisineTypes: prev.cuisineTypes.includes('All')
+        cuisineTypes: prev.cuisineTypes.includes('全部')
           ? [cuisine]
           : prev.cuisineTypes.includes(cuisine)
             ? prev.cuisineTypes.filter(c => c !== cuisine)
-            : [...prev.cuisineTypes.filter(c => c !== 'All'), cuisine]
+            : [...prev.cuisineTypes.filter(c => c !== '全部'), cuisine]
       }));
     }
   };
@@ -69,7 +69,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
           <div className="flex items-center space-x-2">
             <Sliders className="text-pink-600 dark:text-pink-400" size={24} />
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-              Filters & Preferences
+              篩選與偏好
             </h2>
           </div>
           <button
@@ -84,7 +84,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
           {/* Cuisine Types */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-              Cuisine Types
+              料理類型
             </h3>
             <div className="flex flex-wrap gap-2">
               {cuisineTypes.map(cuisine => (
@@ -106,7 +106,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
           {/* Price Range */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-              Price Range
+              價格區間
             </h3>
             <div className="flex space-x-2">
               {priceRanges.map(price => (
@@ -128,7 +128,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
           {/* Max Distance */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-              Maximum Distance: {localPreferences.maxDistance}km
+              最大距離：{localPreferences.maxDistance}公里
             </h3>
             <input
               type="range"
@@ -143,15 +143,15 @@ export const FilterModal: React.FC<FilterModalProps> = ({
               className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
             />
             <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-              <span>0.5km</span>
-              <span>10km</span>
+              <span>0.5公里</span>
+              <span>10公里</span>
             </div>
           </div>
 
           {/* Minimum Rating */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-              Minimum Rating: {localPreferences.minRating}/5
+              最低評分：{localPreferences.minRating}/5
             </h3>
             <input
               type="range"
@@ -166,8 +166,8 @@ export const FilterModal: React.FC<FilterModalProps> = ({
               className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
             />
             <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-              <span>Any</span>
-              <span>5 stars</span>
+              <span>不限</span>
+              <span>5 星</span>
             </div>
           </div>
         </div>
@@ -177,13 +177,13 @@ export const FilterModal: React.FC<FilterModalProps> = ({
             onClick={handleReset}
             className="flex-1 px-4 py-2 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
-            Reset
+            重設
           </button>
           <button
             onClick={handleSave}
             className="flex-1 px-4 py-2 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-lg hover:from-pink-600 hover:to-orange-600 transition-all font-medium"
           >
-            Apply Filters
+            套用篩選
           </button>
         </div>
       </div>

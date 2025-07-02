@@ -18,9 +18,9 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
   onGetDirections
 }) => {
   const getCurrentDayHours = () => {
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
     const today = days[new Date().getDay()];
-    return restaurant.openingHours[today] || 'Hours not available';
+    return restaurant.openingHours[today] || '無營業資訊';
   };
 
   const getPriceRangeColor = (priceRange: string) => {
@@ -70,7 +70,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
               {restaurant.name}
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              {restaurant.cuisine} • {restaurant.distance}km away
+              {restaurant.cuisine} • 距離 {restaurant.distance} 公里
             </p>
           </div>
           <div className="flex items-center space-x-1 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-1 rounded-lg">
@@ -102,7 +102,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
             className="flex-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors flex items-center justify-center space-x-2"
           >
             <Phone size={16} />
-            <span>Call</span>
+            <span>撥打電話</span>
           </button>
           
           <button
@@ -110,7 +110,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
             className="flex-1 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 px-4 py-2 rounded-lg font-medium hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors flex items-center justify-center space-x-2"
           >
             <MapPin size={16} />
-            <span>Directions</span>
+            <span>導航</span>
           </button>
           
           {restaurant.website && (
