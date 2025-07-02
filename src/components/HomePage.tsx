@@ -72,10 +72,10 @@ export const HomePage: React.FC<HomePageProps> = ({
   const getTimeGreeting = () => {
     const timeOfDay = getTimeOfDay();
     const greetings = {
-      morning: "Good morning! Ready for breakfast?",
-      afternoon: "Good afternoon! Time for lunch?",
-      evening: "Good evening! Dinner time?",
-      night: "Late night cravings?"
+      morning: "早安！準備吃早餐嗎？",
+      afternoon: "午安！要吃午餐了嗎？",
+      evening: "晚安！該吃晚餐囉？",
+      night: "夜深了，想吃點宵夜嗎？"
     };
     return greetings[timeOfDay];
   };
@@ -84,13 +84,13 @@ export const HomePage: React.FC<HomePageProps> = ({
     if (!userLocation) {
       return {
         icon: MapPin,
-        text: "Enable location for better suggestions",
+        text: "啟用定位以獲得更好建議",
         color: "text-orange-600 dark:text-orange-400"
       };
     }
     return {
       icon: MapPin,
-      text: "Location detected",
+      text: "已取得位置",
       color: "text-green-600 dark:text-green-400"
     };
   };
@@ -110,11 +110,11 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            What should I eat?
+            今天吃什麼？
           </h1>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            Let us help you decide! Tap the button below for a personalized restaurant suggestion.
+            讓我們幫你決定！點擊下方按鈕獲得個人化餐廳建議。
           </p>
 
           <div className="flex items-center justify-center space-x-2 mb-8">
@@ -137,12 +137,12 @@ export const HomePage: React.FC<HomePageProps> = ({
             {isGenerating ? (
               <>
                 <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
-                <span>Finding the perfect spot...</span>
+                <span>尋找最合適的餐廳...</span>
               </>
             ) : (
               <>
                 <Shuffle size={24} />
-                <span>Surprise Me!</span>
+                <span>給我驚喜</span>
                 <Zap size={20} className="group-hover:animate-pulse" />
               </>
             )}
@@ -154,10 +154,10 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="animate-fade-in">
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                How about this place?
+                覺得這家怎麼樣？
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
-                Perfect match based on your preferences and location
+                根據你的偏好與位置推薦
               </p>
             </div>
             
@@ -175,7 +175,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-medium"
               >
                 <Shuffle size={16} />
-                <span>Try Another Place</span>
+                <span>換一間看看</span>
               </button>
             </div>
           </div>
@@ -189,15 +189,15 @@ export const HomePage: React.FC<HomePageProps> = ({
                 {mockRestaurants.length}+
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-300">
-                Restaurants Available
+                間餐廳可選
               </div>
             </div>
             <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl text-center">
               <div className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-2">
-                Smart
+                智慧
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-300">
-                AI-Powered Suggestions
+                AI 推薦
               </div>
             </div>
           </div>

@@ -14,14 +14,17 @@ export const MapView: React.FC<MapViewProps> = ({
 }) => {
   const getCuisineColor = (cuisine: string) => {
     const colors = {
-      'Japanese': 'bg-red-500',
-      'Italian': 'bg-green-500',
-      'Indian': 'bg-orange-500',
-      'American': 'bg-blue-500',
-      'Chinese': 'bg-yellow-500',
-      'Cafe': 'bg-purple-500',
-      'Mexican': 'bg-pink-500',
-      'Mediterranean': 'bg-teal-500'
+      '日式料理': 'bg-red-500',
+      '義式料理': 'bg-green-500',
+      '印度料理': 'bg-orange-500',
+      '美式料理': 'bg-blue-500',
+      '中式料理': 'bg-yellow-500',
+      '咖啡廳': 'bg-purple-500',
+      '墨西哥料理': 'bg-pink-500',
+      '地中海料理': 'bg-teal-500',
+      '泰式料理': 'bg-lime-500',
+      '韓式料理': 'bg-indigo-500',
+      '法式料理': 'bg-rose-500'
     };
     return colors[cuisine as keyof typeof colors] || 'bg-gray-500';
   };
@@ -56,15 +59,15 @@ export const MapView: React.FC<MapViewProps> = ({
           <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
             <Map size={16} className="text-blue-500" />
             <span className="text-sm text-gray-600 dark:text-gray-300">
-              {sortedRestaurants.length} Restaurants Nearby
+              附近 {sortedRestaurants.length} 間餐廳
             </span>
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            Restaurant Map
+            餐廳地圖
           </h1>
           <p className="text-gray-600 dark:text-gray-300">
-            Explore all available restaurants in your area
+            探索你附近的所有餐廳
           </p>
         </div>
 
@@ -74,10 +77,10 @@ export const MapView: React.FC<MapViewProps> = ({
             <div className="text-center">
               <Map size={48} className="mx-auto text-blue-500 mb-4" />
               <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                Interactive Map View
+                互動地圖
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                In a real implementation, this would show an interactive map with restaurant locations
+                此處在真實應用中會顯示餐廳位置的互動地圖
               </p>
             </div>
             
@@ -103,7 +106,7 @@ export const MapView: React.FC<MapViewProps> = ({
                   <div className="w-8 h-8 bg-blue-200 rounded-full absolute -top-2 -left-2 animate-ping"></div>
                 </div>
                 <span className="text-xs text-blue-600 dark:text-blue-400 absolute -bottom-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                  You
+                  你
                 </span>
               </div>
             )}
@@ -143,7 +146,7 @@ export const MapView: React.FC<MapViewProps> = ({
                         </div>
                         {distance && (
                           <p className="text-sm text-gray-500 dark:text-gray-400">
-                            {distance.toFixed(1)}km away
+                            距離 {distance.toFixed(1)} 公里
                           </p>
                         )}
                       </div>

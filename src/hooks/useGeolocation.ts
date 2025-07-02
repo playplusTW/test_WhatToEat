@@ -11,7 +11,7 @@ export const useGeolocation = () => {
     setError(null);
 
     if (!navigator.geolocation) {
-      setError('Geolocation is not supported by this browser');
+      setError('此瀏覽器不支援定位功能');
       setLoading(false);
       return;
     }
@@ -28,16 +28,16 @@ export const useGeolocation = () => {
       (error) => {
         switch (error.code) {
           case error.PERMISSION_DENIED:
-            setError('Location access denied by user');
+            setError('使用者拒絕存取定位');
             break;
           case error.POSITION_UNAVAILABLE:
-            setError('Location information is unavailable');
+            setError('無法取得定位資訊');
             break;
           case error.TIMEOUT:
-            setError('Location request timed out');
+            setError('取得定位逾時');
             break;
           default:
-            setError('An unknown error occurred');
+            setError('發生未知錯誤');
             break;
         }
         setLoading(false);

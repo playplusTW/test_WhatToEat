@@ -69,7 +69,7 @@ function App() {
               onClick={() => setSelectedRestaurant(null)}
               className="mb-6 px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
             >
-              ← Back to Map
+              ← 返回地圖
             </button>
             <RestaurantCard
               restaurant={selectedRestaurant}

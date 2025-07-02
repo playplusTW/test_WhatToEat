@@ -15,23 +15,23 @@ export const getWeatherWeights = (weather: WeatherCondition | null) => {
   
   // Hot weather preferences
   if (weather.temp > 25) {
-    weights['Mediterranean'] = 1.3;
-    weights['Cafe'] = 1.2;
-    weights['Chinese'] = 0.8; // Less hotpot in hot weather
+    weights['地中海料理'] = 1.3;
+    weights['咖啡廳'] = 1.2;
+    weights['中式料理'] = 0.8; // Less hotpot in hot weather
   }
   
   // Cold weather preferences
   if (weather.temp < 10) {
-    weights['Chinese'] = 1.4; // More hotpot in cold weather
-    weights['Indian'] = 1.2;
-    weights['Cafe'] = 1.1;
+    weights['中式料理'] = 1.4; // More hotpot in cold weather
+    weights['印度料理'] = 1.2;
+    weights['咖啡廳'] = 1.1;
   }
   
   // Rainy weather
   if (weather.main.toLowerCase().includes('rain')) {
-    weights['Chinese'] = 1.5; // Hotpot for rainy days
-    weights['Indian'] = 1.3;
-    weights['Cafe'] = 1.2;
+    weights['中式料理'] = 1.5; // Hotpot for rainy days
+    weights['印度料理'] = 1.3;
+    weights['咖啡廳'] = 1.2;
   }
   
   return weights;
@@ -42,21 +42,21 @@ export const getTimeWeights = (timeOfDay: string) => {
   
   switch (timeOfDay) {
     case 'morning':
-      weights['Cafe'] = 2.0;
-      weights['American'] = 1.3;
+      weights['咖啡廳'] = 2.0;
+      weights['美式料理'] = 1.3;
       break;
     case 'afternoon':
-      weights['Cafe'] = 1.2;
-      weights['Mediterranean'] = 1.1;
+      weights['咖啡廳'] = 1.2;
+      weights['地中海料理'] = 1.1;
       break;
     case 'evening':
-      weights['Italian'] = 1.2;
-      weights['Japanese'] = 1.1;
-      weights['Chinese'] = 1.1;
+      weights['義式料理'] = 1.2;
+      weights['日式料理'] = 1.1;
+      weights['中式料理'] = 1.1;
       break;
     case 'night':
-      weights['Chinese'] = 1.3;
-      weights['Korean'] = 1.2;
+      weights['中式料理'] = 1.3;
+      weights['韓式料理'] = 1.2;
       break;
   }
   
@@ -87,7 +87,7 @@ export const filterRestaurants = (
   return restaurants.filter(restaurant => {
     // Cuisine filter
     if (preferences.cuisineTypes.length > 0 && 
-        !preferences.cuisineTypes.includes('All') &&
+        !preferences.cuisineTypes.includes('全部') &&
         !preferences.cuisineTypes.includes(restaurant.cuisine)) {
       return false;
     }

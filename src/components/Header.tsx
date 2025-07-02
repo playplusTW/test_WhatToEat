@@ -25,10 +25,10 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                WhatToEat
+                今天吃什麼
               </h1>
               <p className="text-xs text-gray-500 dark:text-gray-400">
-                Food Decision Made Easy
+                輕鬆決定餐點
               </p>
             </div>
           </div>
@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
                   ? 'text-green-600 bg-green-50 dark:bg-green-900/20' 
                   : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'
               }`}
-              title={userLocation ? 'Location detected' : 'Click to enable location'}
+              title={userLocation ? '已取得位置' : '點擊以啟用定位'}
             >
               <MapPin size={20} />
             </button>
@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              title="Toggle theme"
+              title="切換主題"
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={onSettingsClick}
               className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              title="Settings"
+              title="設定"
             >
               <Settings size={20} />
             </button>
